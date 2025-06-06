@@ -1,0 +1,49 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencias y builds
+node_modules/
+dist/
+dist-ssr/
+build/                  # Carpeta de build generada por Create React App (por si alguna vez se usa)
+*.local
+
+# Variables de entorno
+.env
+.env.*                  # Por si usas archivos como .env.production o .env.development
+
+# Editor config
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sistema operativo
+Thumbs.db               # Archivos generados por Windows
+ehthumbs.db
+desktop.ini
+
+# Backup y temporales
+*.bak
+*.tmp
+*.old
+*.orig
+
+# Archivos de test/coverage
+coverage/
+*.lcov
+
+# Archivos de despliegue temporales
+.vercel/
+.netlify/

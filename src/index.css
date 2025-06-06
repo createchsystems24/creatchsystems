@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------- Base Layer -------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark text-light-soft font-montserrat;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-rajdhani font-bold;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+/* -------------------- Components Layer -------------------- */
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-rajdhani font-medium text-base transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply border-2 border-primary bg-primary hover:bg-dark-light text-white;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-white hover:bg-primary;
+  }
+
+  .section-title {
+    @apply font-orbitron text-3xl md:text-4xl text-center mb-12 relative text-white;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute left-1/2 -translate-x-1/2 bottom-0 w-24 h-1 bg-primary-light rounded-full;
+  }
+
+  .card {
+    @apply rounded-xl p-6 transition-all duration-300 bg-dark-light backdrop-blur-sm border border-primary hover:border-light text-black shadow-lg;
+  }
+
+  .glass-effect {
+    @apply bg-dark-light backdrop-blur-md border border-white;
+  }
+
+  .tech-gradient {
+    background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  }
+
+  .tech-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-secondary-light;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .grid-pattern {
+    background-size: 20px 20px;
+    @apply bg-grid-pattern;
+  }
+}
+
+/* -------------------- Utilities Layer -------------------- */
+@layer utilities {
+  .text-light-soft {
+    color: #eaeaea; /* Blanco azulado suave */
+  }
+
+  .text-light-subtle {
+    color: #000000; /* Alternativa aún más clara si necesitas más brillo */
+  }
+
+  .bg-dark-light {
+    background-color: #00427c; /* Variante clara del fondo principal */
+  }
+
+  .bg-dark-darker {
+    background-color: #000000; /* Más oscuro para overlays o secciones profundas */
+  }
+
+  .border-light-subtle {
+    border-color: #000000;
+  }
+}

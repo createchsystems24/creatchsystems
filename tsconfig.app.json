@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    //Especifica la versión de ECMAScript que debe generar el compilador
+    "target": "ES2020",
+
+    //Usa la sintaxis moderna para declarar campos de clase, siguiendo la semántica de "define"
+    "useDefineForClassFields": true,
+
+    // Bibliotecas incluidas: funciones modernas de JS, APIs del navegador y objetos iterables del DOM
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+    //Define el sistema de módulos generado, ideal para Vite o bundlers modernos
+    "module": "ESNext",
+
+    //Evita verificar tipos de archivos dentro de node_modules (mejora velocidad de compilación)
+    "skipLibCheck": true,
+
+    /*Bundler mode - Configuración específica para trabajar con herramientas como Vite */
+
+    //Usa una resolución de módulos optimizada para bundlers modernos (en lugar de Node.js clásico)
+    "moduleResolution": "bundler",
+
+    // Permite importar archivos TypeScript con extensión explícita (.ts, .tsx)
+    "allowImportingTsExtensions": true,
+
+    //Obliga a tratar cada archivo como un módulo independiente (necesario para algunos bundlers)
+    "isolatedModules": true,
+
+    // Fuerza a que TypeScript trate todos los archivos como módulos, incluso sin `import`/`export`
+    "moduleDetection": "force",
+
+    //No genera archivos `.js` al compilar (ideal cuando usas un bundler como Vite que se encarga del build)
+    "noEmit": true,
+
+    // Usa la nueva transformación JSX para React 17+ (sin necesidad de importar `React` en cada archivo)
+    "jsx": "react-jsx",
+
+    /* Reglas de linting integradas de TypeScript */
+
+    //Activa todas las comprobaciones estrictas de tipo (buena práctica recomendada)
+    "strict": true,
+
+    //Error si se declara una variable local que no se usa
+    "noUnusedLocals": true,
+
+    //Error si una función recibe parámetros que no se usan
+    "noUnusedParameters": true,
+
+    //Previene errores lógicos al dejar un `case` sin `break` en un `switch`
+    "noFallthroughCasesInSwitch": true
+  },
+
+  //Archivos a incluir en la compilación (en este caso solo la carpeta `src`)
+  "include": ["src"]
+}
