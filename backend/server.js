@@ -29,9 +29,14 @@ app.post('/send', async (req, res) => {
 
     res.status(200).json({ message: 'Correo enviado con éxito' });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error al enviar el correo' });
-  }
+  console.error(' Error al enviar el correo:', error);
+
+  // Enviar error al frontend con detalle
+  res.status(500).json({
+    error: 'Error al enviar el correo',
+    message: error.message  
+  });
+}
 });
 
 const PORT = process.env.PORT || 3001;
