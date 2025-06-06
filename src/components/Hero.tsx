@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
             >
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-dark to-primary opacity animate-pulse-slow"></div>
               <div className="absolute inset-8 rounded-full bg-gradient-to-tr from-secondary to-primary backdrop-blur-sm border border-secondary flex items-center justify-center animate-float">
-                <img src="src/assets/Logo.png" alt="Logo de CREATECH SYSTEMS" className="h-full w-auto max-h-full object-contain p-6" />
+                <img src="/Logo.png" alt="Logo de CREATECH SYSTEMS" className="h-full w-auto max-h-full object-contain p-6" />
               </div>
             </motion.div>
           </div>
