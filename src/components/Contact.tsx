@@ -25,24 +25,26 @@ const Contact: React.FC = () => {
   } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    try {
-      const response = await fetch("https://creatchsystems.onrender.com/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
+  try {
+    const response = await fetch("https://creatchsystems.onrender.com/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
 
-      if (!response.ok) throw new Error("Error al enviar el formulario");
-
-      alert("Mensaje enviado correctamente. ¡Gracias por contactarnos!");
-      reset();
-    } catch (error) {
-      console.error("Error al enviar mensaje:", error);
-      alert("Ocurrió un error al enviar el mensaje. Intenta más tarde.");
+    if (!response.ok) {
+      const dataRes = await response.json();
+      throw new Error(dataRes.message || "Error desconocido");
     }
-  };
+
+    alert("Mensaje enviado correctamente. ¡Gracias por contactarnos!");
+    reset();
+  } catch (error: any) {
+    console.error("❌ Error en frontend:", error);
+    alert(`Ocurrió un error: ${error.message}`);
+  }
+};
+
 
   const contactInfo = [
     {
