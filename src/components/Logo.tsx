@@ -13,7 +13,7 @@ const Logo: React.FC<LogoProps> = ({ className = '', variant = 'default' }) => {
       <div className={`relative ${isSmall ? 'w-8 h-8' : 'w-12 h-12'} mr-2`}>
         <div className={`absolute inset-0 rounded-md border-2 border-primary flex items-center justify-center bg-primary animate-glow overflow-hidden}`}>
 <img
-        src="Logo.png" // O la ruta a tu logo
+        src="/Logo.png" // O la ruta a tu logo
         alt="Logo de CREATECH SYSTEMS"
         className="h-full w-full object-contain p-0.1" // Ajusta el padding si es necesario
       />
